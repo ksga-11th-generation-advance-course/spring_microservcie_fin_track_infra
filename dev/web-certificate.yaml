@@ -5,8 +5,8 @@ metadata:
   namespace: fintrack
 spec:
   dnsNames:
-    - fintrack-ui.kbaenak.tech
-  secretName: tls-cert
+    - fintrack.kbaenak.tech
+  secretName: app-tls
   issuerRef:
-    name: letsencrypt-cluster-issuer
+    name: letsencrypt-prod
     kind: ClusterIssuer
