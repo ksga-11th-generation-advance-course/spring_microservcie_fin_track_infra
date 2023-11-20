@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     - fintrack.kbaenak.tech
-    secretName: app-tls
+    secretName: web-fintrack-cert
   rules:
     - host: fintrack.kbaenak.tech
       http:
