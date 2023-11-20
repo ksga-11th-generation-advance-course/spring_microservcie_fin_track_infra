@@ -3,13 +3,13 @@ kind: Ingress
 metadata:
   name: fintrack-ui
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod-fintrack"
     kubernetes.io/ingress.class: "nginx"
 spec:
   tls:
   - hosts:
     - web-fintrack.kbaenak.tech
-    secretName: fintrack-cert
+    secretName: fintrack-cert-app
   rules:
     - host: web-fintrack.kbaenak.tech
       http:
