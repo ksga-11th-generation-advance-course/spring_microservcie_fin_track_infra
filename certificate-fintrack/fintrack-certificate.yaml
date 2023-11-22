@@ -6,6 +6,7 @@ metadata:
 spec:
   dnsNames:
     - web-fintrack.kbaenak.tech
+    - api-fintrack.kbaenak.tech
   secretName: app-tls
   issuerRef:
     name: letsencrypt-prod
