@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/ksga-11th-generation-advance-course/spring_microservcie_fin_track_infra.git
     targetRevision: master
-    path: dev
+    path: manifest-fintrack-ui
   destination: 
     server: 'https://kubernetes.default.svc'
     namespace: fintrack
