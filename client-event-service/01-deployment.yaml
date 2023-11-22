@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fintrack-client-event-service
+  namespace: fintrack
+  labels:
+    app: fintrack-client-event-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fintrack-client-event-service
+  template:
+    metadata:
+      labels:
+        app: fintrack-client-event-service
+    spec:
+      containers:
+      - name: fintrack-client-event-service
+        image: kimheang68/client-event-service:latest
+        ports:
+        - containerPort: 8088
+        resources:
+         limits:
+           cpu: 500m
+         requests:
+           cpu: 200m
+      
