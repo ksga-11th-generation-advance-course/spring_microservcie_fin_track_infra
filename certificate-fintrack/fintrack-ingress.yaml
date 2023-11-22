@@ -30,7 +30,7 @@ spec:
 
           # Authentication-Service
           - pathType: Prefix
-            path: "/"
+            path: "/fintrack-authentication-service"
             backend:
               service:
                 name: fintrack-authentication-service
