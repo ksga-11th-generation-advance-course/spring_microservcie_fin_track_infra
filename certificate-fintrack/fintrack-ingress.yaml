@@ -30,7 +30,7 @@ spec:
 
           # Authentication-Service
           - pathType: Prefix
-            path: "/authentication-service/swagger-ui/index.html"
+            path: "/"
             backend:
               service:
                 name: fintrack-authentication-service
