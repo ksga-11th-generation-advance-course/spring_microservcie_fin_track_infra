@@ -9,7 +9,7 @@ pipeline {
               sh "git config user.email kimheangken68@gmail.com"
               sh "git config user.name KimheangKen"
               // sed : wanna change file 
-              sh "sed -i \"s+kimheang68/ui-fintrack.*+kimheang68/ui-fintrack:${DOCKERTAG}+g\" dev/manifest-fintrack-ui.yaml"
+              sh "sed -i \"s+kimheang68/ui-fintrack.*+kimheang68/ui-fintrack:${DOCKERTAG}+g\" manifest-fintrack-ui/web-deployment.yaml"
               sh "git add ."
               sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
               sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ksga-11th-generation-advance-course/spring_microservcie_fin_track_infra HEAD:master"
