@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fintrack-authentication-service
+  namespace: fintrack
+  labels:
+    app: fintrack-authentication-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fintrack-authentication-service
+  template:
+    metadata:
+      labels:
+        app: fintrack-authentication-service
+    spec:
+      containers:
+      - name: fintrack-authentication-service
+        image: kimheang68/fintrack-authentication-service:13
+        ports:
+        - containerPort: 8081
+        resources:
+         limits:
+           cpu: 500m
+         requests:
+           cpu: 200m
+      
