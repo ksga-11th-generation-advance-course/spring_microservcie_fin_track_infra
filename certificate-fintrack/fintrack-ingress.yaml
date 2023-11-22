@@ -17,7 +17,7 @@ spec:
       http:
         paths:
           - pathType: Prefix
-            path: "/"
+            path: "/new"
             backend:
               service:
                 name: fintrack-ui
@@ -27,7 +27,7 @@ spec:
     - host: api-fintrack.kbaenak.tech
       http:
         paths:
-        
+
           # Authentication-Service
           - pathType: Prefix
             path: "/authentication-service"
