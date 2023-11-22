@@ -17,7 +17,7 @@ spec:
       http:
         paths:
           - pathType: Prefix
-            path: "/new/"
+            path: "/new"
             backend:
               service:
                 name: fintrack-ui
