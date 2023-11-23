@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fintrack-telegram-service
+  namespace: fintrack
+  labels:
+    app: fintrack-telegram-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fintrack-telegram-service
+  template:
+    metadata:
+      labels:
+        app: fintrack-telegram-service
+    spec:
+      containers:
+        - name: fintrack-telegram-service
+          image: kimheang68/fintrack-telegram-service:6
+          ports:
+            - containerPort: 8082
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m

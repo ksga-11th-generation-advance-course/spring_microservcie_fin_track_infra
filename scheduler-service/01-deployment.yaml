@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fintrack-scheduler-service
+  namespace: fintrack
+  labels:
+    app: fintrack-scheduler-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fintrack-scheduler-service
+  template:
+    metadata:
+      labels:
+        app: fintrack-scheduler-service
+    spec:
+      containers:
+        - name: fintrack-scheduler-service
+          image: kimheang68/fintrack-scheduler-service:latest
+          ports:
+            - containerPort: 8086
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m
