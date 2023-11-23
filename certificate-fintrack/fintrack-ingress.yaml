@@ -36,4 +36,21 @@ spec:
                 name: fintrack-authentication-service
                 port:
                   number: 8081
+          # Client-Event-Service
+          - pathType: Prefix
+            path: "/fintrack-client-event-service"
+            backend:
+              service:
+                name: fintrack-client-event-service
+                port:
+                  number: 8088
+          # Client-Event-Service
+          - pathType: Prefix
+            path: "/fintrack-web-push-service"
+            backend:
+              service:
+                name: fintrack-web-push-service
+                port:
+                  number: 8084
+          
     
