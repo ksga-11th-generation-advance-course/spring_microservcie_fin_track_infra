@@ -21,8 +21,16 @@ spec:
         ports:
         - containerPort: 8088
         resources:
-         limits:
-           cpu: 500m
-         requests:
-           cpu: 200m
-      
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+        env:
+        - name: SPRING_KAFKA_PRODUCER_BOOTSTRAP_SERVERS
+          value: "kafka-service.kafka:9092"
+        - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
+          value: "org.apache.kafka.common.serialization.StringSerializer"
+        - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
+          value: "org.springframework.kafka.support.serializer.JsonSerializer"
+        - name: SPRING_KAFKA_DEAD_LETTER_TOPIC
+          value: "notification-retry"
