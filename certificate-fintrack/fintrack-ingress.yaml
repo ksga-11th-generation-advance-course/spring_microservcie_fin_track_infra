@@ -44,7 +44,7 @@ spec:
                 name: fintrack-client-event-service
                 port:
                   number: 8088
-          # Client-Event-Service
+          # Web-Push-Service
           - pathType: Prefix
             path: "/fintrack-web-push-service"
             backend:
@@ -52,5 +52,13 @@ spec:
                 name: fintrack-web-push-service
                 port:
                   number: 8084
+          # fintrack-scheduler
+          - pathType: Prefix
+            path: "/fintrack-scheduler-service"
+            backend:
+              service:
+                name: fintrack-scheduler-service
+                port:
+                  number: 8086
           
     
