@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: fintrack-email-kb-service
-          image: kimheang68/fintrack-email-kb-service:30
+          image: kimheang68/fintrack-email-kb-service:31
           ports:
             - containerPort: 8085
           resources:
