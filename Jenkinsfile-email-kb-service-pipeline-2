@@ -12,7 +12,7 @@ pipeline {
               sh "sed -i \"s+kimheang68/fintrack-email-kb-service.*+kimheang68/fintrack-email-kb-service:${DOCKERTAG}+g\" email-kb-service/01-deployment.yaml"
               sh "git add ."
               sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-              sh "email-kb-service https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ksga-11th-generation-advance-course/spring_microservcie_fin_track_infra HEAD:master"
+              sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ksga-11th-generation-advance-course/spring_microservcie_fin_track_infra HEAD:master"
             }
           }
         }
