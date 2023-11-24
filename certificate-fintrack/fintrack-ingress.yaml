@@ -52,7 +52,7 @@ spec:
                 name: fintrack-web-push-service
                 port:
                   number: 8084
-          # fintrack-scheduler
+          # Scheduler
           - pathType: Prefix
             path: "/fintrack-scheduler-service"
             backend:
