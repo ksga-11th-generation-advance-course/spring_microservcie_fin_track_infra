@@ -68,5 +68,11 @@ spec:
                 name: fintrack-telegram-service
                 port:
                   number: 8082
-          
-    
+          # Email KB
+          - pathType: Prefix
+            path: "/fintrack-email-kb-service"
+            backend:
+              service:
+                name: fintrack-email-kb-service
+                port:
+                  number: 8085
