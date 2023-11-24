@@ -60,5 +60,13 @@ spec:
                 name: fintrack-scheduler-service
                 port:
                   number: 8086
+          # Telegram 
+          - pathType: Prefix
+            path: "/fintrack-telegram-service"
+            backend:
+              service:
+                name: fintrack-telegram-service
+                port:
+                  number: 8082
           
     
