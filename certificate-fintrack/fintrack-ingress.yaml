@@ -24,6 +24,16 @@ spec:
                 port:
                   number: 1080
 
+        # UI Test (Sophat's)
+          - pathType: Prefix
+            path: "/fintrack-ui-testing"
+            backend:
+              service:
+                name: ui-testing
+                port:
+                  number: 1081
+
+
     # DNS API
     - host: api-fintrack.kbaenak.tech
       http:
