@@ -7,6 +7,7 @@ spec:
   dnsNames:
     - web-fintrack.kbaenak.tech
     - api-fintrack.kbaenak.tech
+    - web.seiha.lol
   secretName: app-tls
   issuerRef:
     name: letsencrypt-prod

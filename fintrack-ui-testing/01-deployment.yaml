@@ -25,6 +25,3 @@ spec:
             cpu: 500m
           requests:
             cpu: 200m
-        env:
-        - name: SERVER_SERVLET_CONTEXT_PATH
-          value: "/ui-testing"

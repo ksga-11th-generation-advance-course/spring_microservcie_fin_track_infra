@@ -10,6 +10,7 @@ spec:
   - hosts:
     - web-fintrack.kbaenak.tech
     - api-fintrack.kbaenak.tech
+    - web.seiha.lol
     secretName: fintrack-cert-app
   rules:
     # DNS UI
@@ -24,15 +25,17 @@ spec:
                 port:
                   number: 1080
 
-        # UI Test (Sophat's)
+    # Sophat's web testing
+    - host: web.seiha.lol
+      http:
+        paths:
           - pathType: Prefix
-            path: "/ui-testing"
+            path: "/"
             backend:
               service:
                 name: fintrack-ui-testing
                 port:
                   number: 1081
-
 
     # DNS API
     - host: api-fintrack.kbaenak.tech
@@ -47,6 +50,7 @@ spec:
                 name: fintrack-authentication-service
                 port:
                   number: 8081
+
           # Client-Event-Service
           - pathType: Prefix
             path: "/fintrack-client-event-service"
@@ -55,6 +59,7 @@ spec:
                 name: fintrack-client-event-service
                 port:
                   number: 8088
+
           # Web-Push-Service
           - pathType: Prefix
             path: "/fintrack-web-push-service"
@@ -63,6 +68,7 @@ spec:
                 name: fintrack-web-push-service
                 port:
                   number: 8084
+
           # Scheduler
           - pathType: Prefix
             path: "/fintrack-scheduler-service"
@@ -71,6 +77,7 @@ spec:
                 name: fintrack-scheduler-service
                 port:
                   number: 8086
+
           # Telegram 
           - pathType: Prefix
             path: "/fintrack-telegram-service"
@@ -79,6 +86,7 @@ spec:
                 name: fintrack-telegram-service
                 port:
                   number: 8082
+
           # Email KB
           - pathType: Prefix
             path: "/fintrack-email-kb-service"
@@ -87,6 +95,7 @@ spec:
                 name: fintrack-email-kb-service
                 port:
                   number: 8085
+                  
           # Notification
           - pathType: Prefix
             path: "/fintrack-notification-service"
