@@ -23,6 +23,19 @@ spec:
                 name: fintrack-ui
                 port:
                   number: 1080
+
+    #  UI Testing
+    - host: web-testing-fintrack.kbaenak.tech
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: fintrack-ui-testing
+                port:
+                  number: 1081
+
     # DNS API
     - host: api-fintrack.kbaenak.tech
       http:
