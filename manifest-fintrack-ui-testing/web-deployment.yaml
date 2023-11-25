@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fintrack-ui-testing
+  namespace: fintrack
+  labels:
+    app: fintrack-ui-testing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fintrack-ui-testing
+  template:
+    metadata:
+      labels:
+        app: fintrack-ui-testing
+    spec:
+      containers:
+      - name: fintrack-ui-testing
+        image: kimheang68/ui-testing-fintrack:latest
+        ports:
+        - containerPort: 80
+        resources:
+         limits:
+           cpu: 500m
+         requests:
+           cpu: 200m
+      
