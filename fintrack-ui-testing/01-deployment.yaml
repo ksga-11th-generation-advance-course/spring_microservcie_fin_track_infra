@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fintrack-ui-testing
-        image: kimheang68/fintrack-ui-testing:latest
+        image: kimheang68/fintrack-ui-testing:8
         ports:
         - containerPort: 80
         resources:
@@ -25,6 +25,6 @@ spec:
             cpu: 500m
           requests:
             cpu: 200m
-        # env:
-        # - name: SERVER_SERVLET_CONTEXT_PATH
-        #   value: "/fintrack-ui-testing"
+        env:
+        - name: SERVER_SERVLET_CONTEXT_PATH
+          value: "/fintrack-ui-testing"
