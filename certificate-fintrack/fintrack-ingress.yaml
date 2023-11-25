@@ -26,10 +26,10 @@ spec:
 
         # UI Test (Sophat's)
           - pathType: Prefix
-            path: "/fintrack-ui-testing"
+            path: "/ui-testing"
             backend:
               service:
-                name: ui-testing
+                name: fintrack-ui-testing
                 port:
                   number: 1081
 
