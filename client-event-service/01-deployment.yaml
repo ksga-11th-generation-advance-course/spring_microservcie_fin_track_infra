@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fintrack-client-event-service
-        image: kimheang68/fintrack-client-event-service:14
+        image: kimheang68/fintrack-client-event-service:15
         ports:
         - containerPort: 8088
         resources:
