@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: fintrack-notification-service
-          image: kimheang68/fintrack-notification-service:8
+          image: kimheang68/fintrack-notification-service:9
           ports:
             - containerPort: 8087
           resources:
