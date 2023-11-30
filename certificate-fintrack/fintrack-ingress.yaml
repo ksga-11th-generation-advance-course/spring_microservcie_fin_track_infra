@@ -8,14 +8,13 @@ metadata:
 spec:
   tls:
   - hosts:
-    - web-fintrack.kbaenak.tech
-    - api-fintrack.kbaenak.tech
+    - www.fintrack.dev
+    - api.fintrack.dev
     - web.seiha.lol
     secretName: fintrack-cert-app
   rules:
     # DNS UI
-    - host: web-fintrack.kbaenak.tech
-      http:
+    - host: www.fintrack.dev
         paths:
           - pathType: Prefix
             path: "/"
@@ -38,7 +37,7 @@ spec:
                   number: 1081
 
     # DNS API
-    - host: api-fintrack.kbaenak.tech
+    - host: api.fintrack.dev
       http:
         paths:
 

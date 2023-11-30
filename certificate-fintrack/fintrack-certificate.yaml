@@ -5,8 +5,8 @@ metadata:
   namespace: fintrack
 spec:
   dnsNames:
-    - web-fintrack.kbaenak.tech
-    - api-fintrack.kbaenak.tech
+    - www.fintrack.dev
+    - api.fintrack.dev
     - web.seiha.lol
   secretName: app-tls
   issuerRef:
