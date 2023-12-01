@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: fintrack-telegram-service
-          image: kimheang68/fintrack-telegram-service:18
+          image: kimheang68/fintrack-telegram-service:19
           ports:
             - containerPort: 8082
           resources:
