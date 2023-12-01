@@ -1,3 +1,35 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: fintrack-authentication-service
+#   namespace: fintrack
+#   labels:
+#     app: fintrack-authentication-service
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: fintrack-authentication-service
+#   template:
+#     metadata:
+#       labels:
+#         app: fintrack-authentication-service
+#     spec:
+#       containers:
+#       - name: fintrack-authentication-service
+#         image: kimheang68/fintrack-authentication-service:25
+#         ports:
+#         - containerPort: 8081
+#         resources:
+#          limits:
+#            cpu: 500m
+#          requests:
+#            cpu: 200m
+#         env:
+#         - name: SERVER_SERVLET_CONTEXT_PATH
+#           value: "/fintrack-authentication-service"
+      
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,11 +53,17 @@ spec:
         ports:
         - containerPort: 8081
         resources:
-         limits:
-           cpu: 500m
-         requests:
-           cpu: 200m
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
         env:
         - name: SERVER_SERVLET_CONTEXT_PATH
           value: "/fintrack-authentication-service"
-      
+        volumeMounts:
+        - name: images-volume
+          mountPath: /app/authentication-service/src/main/resources/images
+      volumes:
+      - name: images-volume
+        hostPath:
+          path: /home/master/images_file
