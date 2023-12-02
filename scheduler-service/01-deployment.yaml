@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: fintrack-scheduler-service
-          image: kimheang68/fintrack-scheduler-service:13
+          image: kimheang68/fintrack-scheduler-service:14
           ports:
             - containerPort: 8086
           resources:
