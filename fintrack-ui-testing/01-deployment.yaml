@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fintrack-ui-testing
-        image: kimheang68/fintrack-ui-testing:22
+        image: kimheang68/fintrack-ui-testing:23
         ports:
         - containerPort: 80
         resources:
