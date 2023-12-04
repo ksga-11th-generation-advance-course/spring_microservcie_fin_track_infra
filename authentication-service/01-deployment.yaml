@@ -62,8 +62,8 @@ spec:
           value: "/fintrack-authentication-service"
         volumeMounts:
         - name: images-volume
-          mountPath: /app/authentication-service/src/main/resources/images
+          mountPath: /app/authentication-service/src/main/resources/images/
       volumes:
       - name: images-volume
         hostPath:
-          path: /home/master/images_file
+          path: /home/fintrack/images_file
