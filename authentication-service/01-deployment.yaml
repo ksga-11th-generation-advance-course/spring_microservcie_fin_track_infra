@@ -17,7 +17,7 @@
 #     spec:
 #       containers:
 #       - name: fintrack-authentication-service
-#         image: kimheang68/fintrack-authentication-service:31
+#         image: kimheang68/fintrack-authentication-service:33
 #         ports:
 #         - containerPort: 8081
 #         resources:
@@ -49,7 +49,7 @@ spec:
     spec:
       containers:
       - name: fintrack-authentication-service
-        image: kimheang68/fintrack-authentication-service:31
+        image: kimheang68/fintrack-authentication-service:33
         ports:
         - containerPort: 8081
         resources:
