@@ -113,3 +113,11 @@ spec:
                 name: fintrack-aos-service
                 port:
                   number: 8181
+          # Ios
+          - pathType: Prefix
+            path: "/fintrack-ios-service"
+            backend:
+              service:
+                name: fintrack-ios-service
+                port:
+                  number: 8180
