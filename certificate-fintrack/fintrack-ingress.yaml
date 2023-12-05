@@ -105,3 +105,11 @@ spec:
                 name: fintrack-notification-service
                 port:
                   number: 8087
+          # Aos
+          - pathType: Prefix
+            path: "/fintrack-aos-service"
+            backend:
+              service:
+                name: fintrack-aos-service
+                port:
+                  number: 8181
