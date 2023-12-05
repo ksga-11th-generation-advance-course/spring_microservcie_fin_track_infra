@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fintrack-ios-service
-        image: kimheang68/fintrack-ios-service:latest
+        image: kimheang68/fintrack-ios-service:3
         ports:
         - containerPort: 8081
         resources:
