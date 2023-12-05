@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fintrack-ios-service
+  namespace: fintrack
+  labels:
+    app: fintrack-ios-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fintrack-ios-service
+  template:
+    metadata:
+      labels:
+        app: fintrack-ios-service
+    spec:
+      containers:
+      - name: fintrack-ios-service
+        image: kimheang68/fintrack-ios-service:latest
+        ports:
+        - containerPort: 8081
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+        env:
+        - name: SERVER_SERVLET_CONTEXT_PATH
+          value: "/fintrack-ios-service"
+        
