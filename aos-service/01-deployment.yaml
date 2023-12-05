@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fintrack-aos-service
-        image: kimheang68/fintrack-aos-service:latest
+        image: kimheang68/fintrack-aos-service:2
         ports:
         - containerPort: 8081
         resources:
