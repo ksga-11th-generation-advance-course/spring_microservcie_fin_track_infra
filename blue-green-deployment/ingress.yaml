@@ -1,17 +1,52 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: rollout-bluegreen
+#   annotations:
+#     kubernetes.io/ingress.class: nginx
+# spec:
+#   rules:
+#   - http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: rollout-bluegreen-active
+#             port:
+#               number: 80
+
+
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rollout-bluegreen
+  name : blue-green-ingress
+  namespace: blue-green-rollout
   annotations:
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+###### bluegreen.live.com will be a enduser facing web URL #######
+  - host: live.kbaenak.tech
+    http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
             name: rollout-bluegreen-active
+            port:
+              number: 80
+###### bluegreen.staging.com will be internal testing web URL (Like for new app version fucntionality for QA testers) ######
+  - host: staging.kbaenak.tech
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: rollout-bluegreen-preview
             port:
               number: 80
