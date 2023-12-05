@@ -21,7 +21,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name : blue-green-ingress
+  name : rollout-bluegreen
   # namespace: blue-green-rollout
   annotations:
     kubernetes.io/ingress.class: nginx
