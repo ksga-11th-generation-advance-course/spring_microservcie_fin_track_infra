@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: kimheang68/ui-fintrack:46
+        image: kimheang68/ui-fintrack:45
         imagePullPolicy: Always
         ports:
         - containerPort: 80
