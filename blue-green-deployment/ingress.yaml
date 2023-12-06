@@ -38,7 +38,7 @@ spec:
           service:
             name: rollout-bluegreen-active
             port:
-              number: 80
+              number: 3080
 ###### bluegreen.staging.com will be internal testing web URL (Like for new app version fucntionality for QA testers) ######
   - host: staging.kbaenak.tech
     http:
@@ -49,4 +49,4 @@ spec:
           service:
             name: rollout-bluegreen-preview
             port:
-              number: 80
+              number: 3080
