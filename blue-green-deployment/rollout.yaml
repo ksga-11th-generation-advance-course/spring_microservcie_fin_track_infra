@@ -17,10 +17,10 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: argoproj/rollouts-demo:yellow
+        image: kimheang68/ui-fintrack:46
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80
   strategy:
     blueGreen:
       # activeService specifies the service to update with the new template hash at time of promotion.
