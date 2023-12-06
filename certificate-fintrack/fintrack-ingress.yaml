@@ -12,10 +12,22 @@ spec:
     - api.fintrack.dev
     - web.seiha.lol
     - www.fintrack.dev
+    - fintrack.dev
     secretName: fintrack-cert-app
   rules:
     # DNS UI
     - host: www.fintrack.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: fintrack-ui
+                port:
+                  number: 1080
+    # DNS UI
+    - host: fintrack.dev
       http:
         paths:
           - pathType: Prefix

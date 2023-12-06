@@ -8,6 +8,7 @@ spec:
     - www.fintrack.dev
     - api.fintrack.dev
     - web.seiha.lol
+    - fintrack.dev
     
   secretName: app-tls
   issuerRef:
