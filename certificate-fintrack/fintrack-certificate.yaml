@@ -5,8 +5,8 @@ metadata:
   namespace: fintrack
 spec:
   dnsNames:
-    - api.fintrack.dev
-    - fintrack.dev
+    # - api.fintrack.dev
+    # - fintrack.dev
     - fintrack.kbaenak.tech
     
   secretName: app-tls
