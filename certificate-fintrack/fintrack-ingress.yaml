@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     - fintrack.kbaenak.tech
-    - api.fintrack.dev
+    # - api.fintrack.dev
     secretName: fintrack-cert-app
   rules:
     # DNS UI
