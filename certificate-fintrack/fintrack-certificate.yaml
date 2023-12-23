@@ -8,6 +8,7 @@ spec:
     # - api.fintrack.dev
     # - fintrack.dev
     - fintrack.kbaenak.tech
+    - api-fintrack.kbaenak.tech
     
   secretName: app-tls
   issuerRef:
