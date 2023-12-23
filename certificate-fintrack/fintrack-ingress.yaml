@@ -24,7 +24,7 @@ spec:
                 port:
                   number: 1080
     # DNS UI
-    - host: web-fintrack.kbaenak.tech
+    - host: fintrack.kbaenak.tech
       http:
         paths:
           - pathType: Prefix
