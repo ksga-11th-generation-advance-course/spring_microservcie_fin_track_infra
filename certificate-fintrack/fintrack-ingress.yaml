@@ -10,9 +10,6 @@ spec:
   - hosts:
     - web-fintrack.kbaenak.tech
     - api.fintrack.dev
-    - web.seiha.lol
-    - www.fintrack.dev
-    - fintrack.dev
     secretName: fintrack-cert-app
   rules:
     # DNS UI
