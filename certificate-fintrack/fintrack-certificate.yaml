@@ -12,5 +12,5 @@ spec:
     
   secretName: app-tls
   issuerRef:
-    name: letsencrypt-prod-fintrack
+    name: letsencrypt-prod
     kind: ClusterIssuer
