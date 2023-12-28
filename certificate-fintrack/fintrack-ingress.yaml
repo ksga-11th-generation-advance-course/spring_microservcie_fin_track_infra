@@ -11,7 +11,7 @@ spec:
     - fintrack.kbaenak.tech
     - api-fintrack.kbaenak.tech
     # - api.fintrack.dev
-    secretName: fintrack-cert-app
+    secretName: app-tls
   rules:
     # DNS UI
     - host: www.fintrack.dev
