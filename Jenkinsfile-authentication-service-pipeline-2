@@ -1,22 +1,51 @@
+// pipeline {
+//     agent any
+//     stages {
+//         stage('update docker image') {
+//             steps {
+//                 script {
+//                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+//                         withCredentials([usernamePassword(credentialsId: 'git-hub-cred', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])  {
+//                             sh "git config user.email kimheangken68@gmail.com"
+//                             sh "git config user.name KimheangKen"
+//                             // sed : wanna change file 
+//                             sh "sed -i \"s+kimheang68/fintrack-authentication-service.*+kimheang68/fintrack-authentication-service:${DOCKERTAG}+g\" authentication-service/01-deployment.yaml"
+//                             sh "git add ."
+//                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
+//                             sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ksga-11th-generation-advance-course/spring_microservcie_fin_track_infra HEAD:master"
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+//=========>>
 pipeline {
-    agent any
-    stages {
-        stage('update docker image') {
-            steps {
-                script {
-                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                        withCredentials([usernamePassword(credentialsId: 'git-hub-cred', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])  {
-                            sh "git config user.email kimheangken68@gmail.com"
-                            sh "git config user.name KimheangKen"
-                            // sed : wanna change file 
-                            sh "sed -i \"s+kimheang68/fintrack-authentication-service.*+kimheang68/fintrack-authentication-service:${DOCKERTAG}+g\" authentication-service/01-deployment.yaml"
-                            sh "git add ."
-                            sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                            sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ksga-11th-generation-advance-course/spring_microservcie_fin_track_infra HEAD:master"
-                        }
-                    }
-                }
+  agent any
+  stages {
+    stage('update docker image') {
+      steps {
+        script {
+          try {
+            withCredentials([usernamePassword(credentialsId: 'git-hub-cred', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])  {
+              
+                sh "git config user.email kimheangken68@gmail.com"
+                // sh "git config user.name lengchhinghor"
+                // sh "git checkout master"
+              
+                // sed : change file 
+                sh "sed -i \"s+kimheang68/fintrack-authentication-service.*+kimheang68/fintrack-authentication-service:${DOCKERTAG}+g\" authentication-service/01-deployment.yaml"
+                sh "git add ."
+                sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
+                sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ksga-11th-generation-advance-course/spring_microservcie_fin_track_infra HEAD:master"
             }
+          } catch (Exception e) {
+            error("Failed to update Docker image: ${e.message}")
+          }
         }
+      }
     }
+  }
 }
